@@ -1,0 +1,7 @@
+# Ignore Python virtual environment
+/venv/
+
+# Ignore C build files
+*.o
+*.exe
+*.out
