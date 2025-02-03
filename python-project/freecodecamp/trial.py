@@ -1,4 +1,4 @@
-password= input(str('Enter your passcode: '))
+'''password= input(str('Enter your passcode: '))
 
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -18,4 +18,6 @@ def encoding():
                   encrypted_pass += alphabet[index]
       print('plain passcode: ', passcode)
       print('encrypted passcode: ', encrypted_pass)
-encoding()
+encoding()'''
+
+
