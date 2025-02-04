@@ -1,35 +1,31 @@
-def verify_cc(cc_number):
+def verify_card(card_number):
+    reversed_card = card_number[::-1]
 
-      reversed_number = cc_number[::-1]
+    sum_of_oddindex = 0
+    oddindex = reversed_card[::2]
+    for digits in oddindex:
+        sum_of_oddindex += int(digits)
 
-      sum_single_numbers = 0
-      single_number = reversed_number[::2]
-      for digits in single_number:
-            sum_single_numbers += int(digits)
+      
+    sum_of_evenindex = 0
+    evenindex = reversed_card[1::2]
+    for digits in evenindex:
+        number = int(digits) * 2
+        if number > 9:
+            number -= 9
+        sum_of_evenindex += number
 
-      sum_double_numbers = 0
-      double_number = reversed_number[1::2]
-      for digits in double_number:
-            number = int(digits)
-            if number > 9:
-                  number -= 9
-            sum_double_numbers += number
+    total = sum_of_evenindex + sum_of_oddindex
+    return total % 10 == 0
+ 
 
-      total = sum_double_numbers + sum_single_numbers
-      return total % 10 == 0
-
-import re
-def cc_details():
-      cc_number = input("Enter your card number (xxxx-xxxx-xxxx-xxxx): ")
-
-      if not re.fullmatch(r'\d{4}-\d{4}-\d{4}\d{4}', cc_number):
-            print('invlid input, ensure card follows xxxx-xxxx-xxxx-xxxx')
-            return
-      card_reader = str.maketrans({'-': '', ' ': ''})
-      card_number = cc_number.translate(card_reader)
-
-      if verify_cc(card_number):
-            print('valid')
-      else:
-            print('invalid')
-
+def get_card():
+    card_number = input('Enter card number(xxxx-xxxx-xxxx-xxxx): ')
+    card_reading = str.maketrans({'-': '', ' ': ''})
+    card_reader = card_number.translate(card_reading)
+    print(card_reader)
+    if verify_card(card_reader):
+        print('Valid card number')
+    else:
+        print('Invalid card number')
+get_card()

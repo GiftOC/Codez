@@ -1,5 +1,3 @@
-import re
-
 def verify_card(card_number):
     reverse_card = card_number[::-1]
 
@@ -38,3 +36,9 @@ def get_card():
         print('Invalid card number')
 
 get_card()
+
+
+
+
+        
+        
