@@ -35,10 +35,4 @@ def get_card():
     else:
         print('Invalid card number')
 
-get_card()
-
-
-
-
-        
-        
+get_card()      
