@@ -1,20 +1,20 @@
 def verify_card(card_number):
     reverse_card = card_number[::-1]
 
-    sum_of_odd_digits = 0
-    odd_digits = reverse_card[::2]  # typically every other digit starting at index 0
-    for digit in odd_digits:
-        sum_of_odd_digits += int(digit)
+    sum_of_odd_indexed = 0
+    odd_indexed = reverse_card[::2]  # typically every other digit starting at index 0
+    for digit in odd_indexed:
+        sum_of_odd_indexed += int(digit)
 
-    sum_of_even_digits = 0
-    even_digits = reverse_card[1::2]
-    for digit in even_digits:
+    sum_of_even_indexed = 0
+    even_indexed = reverse_card[1::2]
+    for digit in even_indexed:
         number = int(digit) * 2  # usually, you need to double every even-position digit
         if number > 9:  # if doubling makes it two digits
             number -= 9  # same as adding the two digits together
-        sum_of_even_digits += number
+        sum_of_even_indexed += number
 
-    total = sum_of_even_digits + sum_of_odd_digits
+    total = sum_of_even_indexed + sum_of_odd_indexed
     return total % 10 == 0
 
 def get_card():
@@ -35,4 +35,4 @@ def get_card():
     else:
         print('Invalid card number')
 
-get_card()      
+get_card()

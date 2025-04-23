@@ -1,4 +1,5 @@
-text = 'mrttaqrhknsw ih puggrur'
+#text = 'mrttaqrhknsw ih puggrur'
+text = input('Enter your text: ')
 custom_key = 'happycoding'
 def vigenere(message, key, direction=1):
       key_index = 0
